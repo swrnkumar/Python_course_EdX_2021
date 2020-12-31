@@ -1,3 +1,5 @@
+import math
+
 #practice list operations
 
 L = [2,76,98894]
@@ -99,3 +101,14 @@ remove_dups(L1,L2)
 
 print(L1)
 print(L2)
+
+L3 = [5.67,6.8374,7.9877575,9.647,8.87]
+
+def applytoEach(L, f):
+    ''' applying to each element of the list, function '''
+    for i in range(len(L)):
+        L[i] = f(L[i])
+
+applytoEach(L3, int)
+
+print(L3)
