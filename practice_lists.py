@@ -33,3 +33,69 @@ listA = [100,0,1,4,7]
 listA.extend([4, 1, 6, 3, 4])
 
 print(listA)
+
+# examples to show lists are mutable
+
+warm = ['red', 'yellow', 'orange']
+
+hot = warm
+hot.append('pink')
+
+print(hot)
+print(warm)
+
+
+chill = ['blue', 'green', 'grey']
+
+cool = ['blue', 'green', 'grey']
+
+chill.append('brown')
+
+print(chill)
+print(cool)
+
+ListA = ['a', 'e', 'i', 'o']
+ListB = ListA[:]
+
+ListA.append('u')
+
+print(ListA)
+print(ListB)
+
+colour = ['black', 'red', 'grey', 'orange']
+
+colour.sort()
+
+print(colour)
+
+newcolour = sorted(colour)
+print(newcolour)
+
+warmcolour = ['red', 'orange']
+hotcolour = ['yellow']
+brightcolour = [warm]
+
+brightcolour.append(hotcolour)
+
+print(warmcolour)
+print(hotcolour) 
+print(brightcolour)
+
+hotcolour.append('magenta')
+
+print(hotcolour)
+print(brightcolour)
+
+L1 = [1,2,3,4,5,6,7]
+L2 = [3,4,7,9,10]
+
+def remove_dups(L1, L2):
+    L1_copy = L1[:]
+    for e in L1_copy:
+        if e in L2:
+            L1.remove(e)
+
+remove_dups(L1,L2)
+
+print(L1)
+print(L2)
