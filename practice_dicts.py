@@ -88,3 +88,54 @@ beatles = lyrics_to_frequencies(she_loves_you)
 print(beatles)
 print(f"The most common word is {w}")
 print(f"The number of times {w} occurs is {b}")
+
+
+animals = { 'a': ['aardvark'], 'b': ['baboon'], 'c': ['coati']}
+
+animals['d'] = ['donkey']
+animals['d'].append('dog')
+animals['d'].append('dingo')
+animals['d'].append('dragon')
+animals['c'].append('cat')
+animals['c'].append('cucoon')
+animals['b'].append('bat')
+animals['a'].append('ant')
+animals['a'].append('anteater')
+animals['e'] = ['elephant']
+
+print(animals)
+
+def how_many(aDict):
+    '''
+    aDict: A dictionary, where all the values are lists.
+
+    returns: int, how many individual values are in the dictionary.
+    '''
+    result = 0
+    for value in aDict.values():
+        # Since all the values of aDict are lists, aDict.values() will 
+        #  be a list of lists
+        result += len(value)
+    return result
+
+number_animals = how_many(animals)
+
+print(number_animals)
+
+
+def biggest(bDict):
+    '''
+    aDict: A dictionary, where all the values are lists.
+
+    returns: The key with the largest number of values associated with it
+    '''
+
+    biggest_value = 0
+    for value in bDict:
+        biggest_value += 1
+    return (biggest_value)
+
+
+number_biggest = biggest(animals)
+
+print(number_biggest)
