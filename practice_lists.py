@@ -112,3 +112,25 @@ def applytoEach(L, f):
 applytoEach(L3, int)
 
 print(L3)
+
+
+# Fibonacci series
+
+numofCalls = 0
+
+def fib(n):
+    ''' Fibonacci series, returns values'''
+    global numofCalls
+    numofCalls += 1
+    if n == 1:
+        return 1
+    elif n == 2:
+        return 2
+    else:
+        return fib(n-1) + fib(n-2)
+
+
+values_fibonacci = fib(35)
+
+print(f"""The number of Fibonacci for 25 is {values_fibonacci}
+and number of times function was called {numofCalls}""")
