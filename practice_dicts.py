@@ -129,11 +129,16 @@ def biggest(bDict):
 
     returns: The key with the largest number of values associated with it
     '''
-
+    
+    result1 = []
+    
     biggest_value = 0
-    for value in bDict:
-        biggest_value += 1
-    return (biggest_value)
+    
+    for key in bDict.keys():
+        if len(bDict[key]) >= biggest_value:
+            result1 = key      
+            biggest_value = len(bDict[key])
+    return result1
 
 
 number_biggest = biggest(animals)
