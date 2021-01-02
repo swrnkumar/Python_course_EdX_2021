@@ -130,7 +130,43 @@ def fib(n):
         return fib(n-1) + fib(n-2)
 
 
-values_fibonacci = fib(35)
+values_fibonacci = fib(15)
 
-print(f"""The number of Fibonacci for 25 is {values_fibonacci}
+print(f"""The number of Fibonacci for 15 is {values_fibonacci}
 and number of times function was called {numofCalls}""")
+
+
+# Part of game hangman - function isWordGuessed
+
+def isWordGuessed(secretWord, lettersGuessed):
+    '''
+    secretWord: string, the word the user is guessing
+    lettersGuessed: list, what letters have been guessed so far
+    returns: boolean, True if all the letters of secretWord are in lettersGuessed;
+    False otherwise
+    '''
+    for letter in secretWord:
+        if letter in lettersGuessed:
+            return True
+        else:
+            return False
+
+WordofChoice = input("Enter your secret word: ")
+
+GuessList = input("Enter list of letters guessed: ")
+
+GameResult = isWordGuessed(WordofChoice, GuessList)
+
+print(f"Game results {GameResult}")
+
+
+
+# Part of game hangman - getGuessedWord
+
+def getGuessedWord(secretWord, lettersGuessed):
+    '''
+    secretWord: string, the word the user is guessing
+    lettersGuessed: list, what letters have been guessed so far
+    returns: string, comprised of letters and underscores that represents
+      what letters in secretWord have been guessed so far.
+    '''
