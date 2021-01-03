@@ -137,57 +137,57 @@ print(f"""The number of Fibonacci for 15 is {values_fibonacci}
 and number of times function was called {numofCalls}""")
 
 
-# # Part 1 of game hangman - function isWordGuessed
+# Part 1 of game hangman - function isWordGuessed
 
-# def isWordGuessed(secretWord, lettersGuessed):
-#     '''
-#     secretWord: string, the word the user is guessing
-#     lettersGuessed: list, what letters have been guessed so far
-#     returns: boolean, True if all the letters of secretWord are in lettersGuessed;
-#     False otherwise
-#     '''
-#     for letter in secretWord:
-#         if letter in lettersGuessed:
-#             return True
-#         else:
-#             return False
+def isWordGuessed(secretWord, lettersGuessed):
+    '''
+    secretWord: string, the word the user is guessing
+    lettersGuessed: list, what letters have been guessed so far
+    returns: boolean, True if all the letters of secretWord are in lettersGuessed;
+    False otherwise
+    '''
+    for letter in secretWord:
+        if letter in lettersGuessed:
+            return True
+        else:
+            return False
 
-# WordofChoice = input("Enter your secret word: ")
+WordofChoice = input("Enter your secret word: ")
 
-# GuessList = input("Enter list of letters guessed: ")
+GuessList = input("Enter list of letters guessed: ")
 
-# GameResult = isWordGuessed(WordofChoice, GuessList)
+GameResult = isWordGuessed(WordofChoice, GuessList)
 
-# print(f"Game results {GameResult}")
-
-
-
-# # Part 2 of game hangman - getGuessedWord
-
-# def getGuessedWord(secretWord, lettersGuessed):
-#     '''
-#     secretWord: string, the word the user is guessing
-#     lettersGuessed: list, what letters have been guessed so far
-#     returns: string, comprised of letters and underscores that represents
-#       what letters in secretWord have been guessed so far.
-#     '''
-#     guessedString = ""
-#     underscore = " _ "
-
-#     for s in secretWord:
-#         if s in lettersGuessed:
-#             guessedString = guessedString + s
-#         else:
-#             guessedString = guessedString + underscore
-#     return guessedString
-
-# SWord = input("Enter your word: ")
-# GList = input("Enter list of guessed letters: ")
+print(f"Game results {GameResult}")
 
 
-# GResult = getGuessedWord(SWord, GList)
 
-# print(f"The results of this game is {GResult}")
+# Part 2 of game hangman - getGuessedWord
+
+def getGuessedWord(secretWord, lettersGuessed):
+    '''
+    secretWord: string, the word the user is guessing
+    lettersGuessed: list, what letters have been guessed so far
+    returns: string, comprised of letters and underscores that represents
+      what letters in secretWord have been guessed so far.
+    '''
+    guessedString = ""
+    underscore = " _ "
+
+    for s in secretWord:
+        if s in lettersGuessed:
+            guessedString = guessedString + s
+        else:
+            guessedString = guessedString + underscore
+    return guessedString
+
+SWord = input("Enter your word: ")
+GList = input("Enter list of guessed letters: ")
+
+
+GResult = getGuessedWord(SWord, GList)
+
+print(f"The results of this game is {GResult}")
 
 
 # Part 3 of game hangman - getAvailableLetters
