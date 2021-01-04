@@ -42,6 +42,7 @@ def chooseWord(wordlist):
 # Load the list of words into the variable wordlist
 # so that it can be accessed from anywhere in the program
 wordlist = loadWords()
+print(random.choice(wordlist))
 
 def isWordGuessed(secretWord, lettersGuessed):
     '''
@@ -50,59 +51,98 @@ def isWordGuessed(secretWord, lettersGuessed):
     returns: boolean, True if all the letters of secretWord are in lettersGuessed;
       False otherwise
     '''
-    # FILL IN YOUR CODE HERE...
+    secretWord = chooseWord(wordlist)
+
+    for letter in secretWord:
+        if letter in lettersGuessed:
+            return True
+        else:
+            return False
+
+WordofChoice = input("Enter your secret word: ")
+
+GuessList = input("Enter list of letters guessed: ")
+
+GameResult = isWordGuessed(WordofChoice, GuessList)
+
+print(f"Game results {GameResult}")
+
+
+# def getGuessedWord(secretWord, lettersGuessed):
+#     '''
+#     secretWord: string, the word the user is guessing
+#     lettersGuessed: list, what letters have been guessed so far
+#     returns: string, comprised of letters and underscores that represents
+#       what letters in secretWord have been guessed so far.
+#     '''
+#     for s in secretWord:
+#         if s in lettersGuessed:
+#             guessedString = guessedString + s
+#         else:
+#             guessedString = guessedString + underscore
+#     return guessedString
 
 
 
-def getGuessedWord(secretWord, lettersGuessed):
-    '''
-    secretWord: string, the word the user is guessing
-    lettersGuessed: list, what letters have been guessed so far
-    returns: string, comprised of letters and underscores that represents
-      what letters in secretWord have been guessed so far.
-    '''
-    # FILL IN YOUR CODE HERE...
+# def getAvailableLetters(lettersGuessed):
+#     '''
+#     lettersGuessed: list, what letters have been guessed so far
+#     returns: string, comprised of letters that represents what letters have not
+#       yet been guessed.
+#     '''
+#     s = string.ascii_lowercase
+#     alphabetList = []
+#     notGuessed = ""
 
+#     for letters in s:
+#         alphabetList.append(letters)
 
-
-def getAvailableLetters(lettersGuessed):
-    '''
-    lettersGuessed: list, what letters have been guessed so far
-    returns: string, comprised of letters that represents what letters have not
-      yet been guessed.
-    '''
-    # FILL IN YOUR CODE HERE...
+#     for letter in alphabetList:
+#         if letter in lettersGuessed:
+#             alphabetList.remove(letter)
+    
+#     for l in alphabetList:
+#         notGuessed = notGuessed + l
+    
+#     return notGuessed
     
 
-def hangman(secretWord):
-    '''
-    secretWord: string, the secret word to guess.
+    
 
-    Starts up an interactive game of Hangman.
+# def hangman(secretWord):
+#     '''
+#     secretWord: string, the secret word to guess.
 
-    * At the start of the game, let the user know how many 
-      letters the secretWord contains.
+#     Starts up an interactive game of Hangman.
 
-    * Ask the user to supply one guess (i.e. letter) per round.
+#     * At the start of the game, let the user know how many 
+#       letters the secretWord contains.
 
-    * The user should receive feedback immediately after each guess 
-      about whether their guess appears in the computers word.
+#     * Ask the user to supply one guess (i.e. letter) per round.
 
-    * After each round, you should also display to the user the 
-      partially guessed word so far, as well as letters that the 
-      user has not yet guessed.
+#     * The user should receive feedback immediately after each guess 
+#       about whether their guess appears in the computers word.
 
-    Follows the other limitations detailed in the problem write-up.
-    '''
+#     * After each round, you should also display to the user the 
+#       partially guessed word so far, as well as letters that the 
+#       user has not yet guessed.
+
+#     Follows the other limitations detailed in the problem write-up.
+#     '''
+    
+#     guess = input('Please guess a letter')
+    
+#     guessInLowerCase = guess.lower()
     
 
 
 
 
 
-# When you've completed your hangman function, uncomment these two lines
-# and run this file to test! (hint: you might want to pick your own
-# secretWord while you're testing)
 
-# secretWord = chooseWord(wordlist).lower()
-# hangman(secretWord)
+# # # When you've completed your hangman function, uncomment these two lines
+# # # and run this file to test! (hint: you might want to pick your own
+# # # secretWord while you're testing)
+
+# # secretWord = chooseWord(wordlist).lower()
+# # hangman(secretWord)
