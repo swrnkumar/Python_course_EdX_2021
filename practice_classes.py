@@ -104,4 +104,15 @@ s.insert(764)
 print(s)
 print(s.member(765))
 print(s.member(8))
-s.remove(4)
+
+
+class Animal(object):
+    def __init__(self, age):
+        self.age = age
+        self.name = None
+    def get_age(self):
+        return self.age
+    def get_name(self):
+        return self.name
+    def 
+
