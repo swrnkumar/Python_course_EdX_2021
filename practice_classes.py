@@ -114,7 +114,17 @@ class Animal(object):
         return self.age
     def get_name(self):
         return self.name
+    def set_age(self, newage):
+        self.age = newage
+    def set_name(self, newname = ""):
+        self.name = newname
+    def __str__(self):
+        return "animal: " + str(self.name) + ": " + str(self.age)
 
 myanimal = Animal(3)
+myanimal.set_name('foo')
+myanimal.set_age(33)
 
-print(f"The age of my animal is  {myanimal}")
+print(myanimal)
+print(myanimal.get_age())
+print(myanimal.get_name())
