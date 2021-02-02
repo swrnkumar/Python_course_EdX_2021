@@ -114,5 +114,7 @@ class Animal(object):
         return self.age
     def get_name(self):
         return self.name
-    def 
 
+myanimal = Animal(3)
+
+print(f"The age of my animal is  {myanimal}")
