@@ -121,10 +121,35 @@ class Animal(object):
     def __str__(self):
         return "animal: " + str(self.name) + ": " + str(self.age)
 
+class cat(Animal):
+    def speak(self):
+        print("meowww")
+    def __str__(self):
+        return "cat: " + str(self.name) + ", " + str(self.age)
+
+class rabbit(Animal):
+    def speak(self):
+        print("meep")
+    def __str__(self):
+        return "rabbit: " + str(self.name) + ", " +str(self.age)
+
 myanimal = Animal(3)
 myanimal.set_name('foo')
 myanimal.set_age(33)
 
+jelly = cat(1)
+jelly.set_name('foobar')
+jelly.set_age(5)
+
+
+blob = rabbit(7)
+blob.set_name('fifee')
+blob.set_age(7.5)
+
 print(myanimal)
 print(myanimal.get_age())
 print(myanimal.get_name())
+print(jelly)
+print(blob)
+print(blob.speak())
+print(jelly.speak())
