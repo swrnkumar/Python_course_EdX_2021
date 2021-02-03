@@ -133,6 +133,22 @@ class rabbit(Animal):
     def __str__(self):
         return "rabbit: " + str(self.name) + ", " +str(self.age)
 
+class person(Animal):
+    def __init__(self, name, age):
+        Animal.__init__(self, age)
+        Animal.set_name(self, name)
+        self.friends = []
+    def get_friends(self):
+        return self.friends
+    def add_friend(self, fname):
+        if fname not in self.friends:
+            self.friends.append(fname)
+    def speak(self):
+        print("Hello friends!")
+    def age_diff(self, other):
+        
+
+
 myanimal = Animal(3)
 myanimal.set_name('foo')
 myanimal.set_age(33)
