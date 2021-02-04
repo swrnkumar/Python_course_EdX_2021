@@ -146,7 +146,14 @@ class person(Animal):
     def speak(self):
         print("Hello friends!")
     def age_diff(self, other):
-        
+        diff = self.get_age() - other.get_age()
+        if self.age > other.age:
+            print(self.name, "is", diff, "years older than ", other.name)
+        else:
+            print(self.name, "is", -diff, "years younger than", other.name)
+    def __str__(self):
+        return "person: " + str(self.name) + ", " +str(self.age)
+
 
 
 myanimal = Animal(3)
@@ -162,6 +169,11 @@ blob = rabbit(7)
 blob.set_name('fifee')
 blob.set_age(7.5)
 
+eric = person('Erik', 54)
+eric.set_age(34)
+bob = person('Bobbobb', 25)
+das = person('dasss', 34)
+
 print(myanimal)
 print(myanimal.get_age())
 print(myanimal.get_name())
@@ -169,3 +181,6 @@ print(jelly)
 print(blob)
 print(blob.speak())
 print(jelly.speak())
+print(eric.speak())
+print(eric.age_diff(bob))
+print(eric.age_diff(das))
