@@ -1,3 +1,4 @@
+import random
 # practice exercises for classes - data structures
 
 class Coordinate(object):
@@ -149,12 +150,17 @@ class person(Animal):
         diff = self.get_age() - other.get_age()
         if self.age > other.age:
             print(self.name, "is", diff, "years older than ", other.name)
+        elif self.age == other.age:
+            print(self.name, "is the same age as", other.name)
         else:
-            print(self.name, "is", -diff, "years younger than", other.name)
+            print(self.name, "is", -diff, "years younger than ", other.name)
     def __str__(self):
         return "person: " + str(self.name) + ", " +str(self.age)
 
-
+class student(person):
+    def __init__(self, name, age, major = None):
+        person.__init__(self, name, age)
+    
 
 myanimal = Animal(3)
 myanimal.set_name('foo')
@@ -169,7 +175,7 @@ blob = rabbit(7)
 blob.set_name('fifee')
 blob.set_age(7.5)
 
-eric = person('Erik', 54)
+eric = person('Eric', 54)
 eric.set_age(34)
 bob = person('Bobbobb', 25)
 das = person('dasss', 34)
@@ -182,5 +188,6 @@ print(blob)
 print(blob.speak())
 print(jelly.speak())
 print(eric.speak())
-print(eric.age_diff(bob))
-print(eric.age_diff(das))
+eric.age_diff(bob)
+eric.age_diff(das)
+person.age_diff(bob, das)
