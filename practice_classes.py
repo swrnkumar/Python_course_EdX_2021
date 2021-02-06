@@ -160,6 +160,21 @@ class person(Animal):
 class student(person):
     def __init__(self, name, age, major = None):
         person.__init__(self, name, age)
+        self.major = major
+    def change_major(self, major):
+        self = major
+    def speak(self):
+        r = random.random()
+        if r < 0.25:
+            print("I need to finish assignments")
+        elif 0.25 <= r < 0.5:
+            print("I need to eat")
+        elif 0.5 <= r < 0.75:
+            print("I need to sleep")
+        else:
+            print("I'm taking a break")
+    def __str__(self):
+        return "Student: " + str(self.name) + ", " + str(self.age) + ", studying " + str(self.major)
     
 
 myanimal = Animal(3)
@@ -191,3 +206,6 @@ print(eric.speak())
 eric.age_diff(bob)
 eric.age_diff(das)
 person.age_diff(bob, das)
+matt = student("matt", 16, "EdX course 1")
+print(matt)
+matt.speak()
